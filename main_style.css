@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -31,14 +36,20 @@ header a:hover {
   -webkit-box-reflect: below -5px linear-gradient(transparent, rgba(0, 0, 0, 0.3333333333));
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .main {
-  width: 100%;
-  height: calc(var(--index) * 24.1);
+  flex: 1;
   background-color: gray;
   display: grid;
   grid-template-columns: 200px 1fr;
   text-align: left;
   font-size: 14px;
+  overflow-y: auto;
 }
 .main__users {
   overflow-y: scroll;
@@ -51,13 +62,13 @@ header a:hover {
   padding: 5px;
 }
 .main__users div:nth-child(3n+1) {
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.452);
 }
 .main__users div:nth-child(3n+2) {
-  background-color: rgb(89, 0, 255);
+  background-color: rgba(89, 0, 255, 0.596);
 }
 .main__users div:nth-child(3n) {
-  background-color: rgb(0, 255, 34);
+  background-color: rgba(102, 255, 0, 0.432);
 }
 .main__chat {
   overflow-y: scroll;
